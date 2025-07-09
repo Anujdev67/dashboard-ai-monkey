@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Monkey Promotion Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header shadow-sm">
+    <div class="container flex items-center justify-between py-16">
+      <h2 class="flex items-center gap-8" style="font-size: var(--font-size-2xl);">
+        🐵 AI Monkey Promos
+      </h2>
+      <nav class="flex gap-8">
+        <button class="btn btn--outline btn--sm" data-section="home">Home</button>
+        <button class="btn btn--outline btn--sm" data-section="submissions">Submissions</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME SECTION -->
+    <section id="home-section">
+      <!-- Hero -->
+      <section class="hero py-32">
+        <div class="container flex flex-col items-center gap-16">
+          <h1>Bananas for Your Brand 🍌</h1>
+          <p style="font-size: var(--font-size-lg); max-width: 640px; text-align: center;">
+            Boost your marketing with viral AI-generated monkey videos. Engage your audience, elevate
+            your brand, and go bananas with our creative content!
+          </p>
+          <a href="#inquiry-form" class="btn btn--primary btn--lg">Request a Promo</a>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="stats py-32">
+        <div class="container grid stats-grid gap-16"></div>
+      </section>
+
+      <!-- Services -->
+      <section class="services py-32">
+        <div class="container flex flex-col gap-16">
+          <h2 class="text-center">Our Video Packages</h2>
+          <div id="services-list" class="grid services-grid gap-16"></div>
+        </div>
+      </section>
+
+      <!-- Inquiry Form -->
+      <section class="py-32" id="inquiry-form">
+        <div class="container">
+          <div class="card">
+            <div class="card__header">
+              <h3>Client Inquiry Form</h3>
+            </div>
+            <div class="card__body">
+              <form id="promoForm" novalidate>
+                <div class="form-group">
+                  <label class="form-label" for="brandName">Client / Brand Name *</label>
+                  <input class="form-control" type="text" id="brandName" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contactName">Contact Person Name *</label>
+                  <input class="form-control" type="text" id="contactName" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Email Address *</label>
+                  <input class="form-control" type="email" id="email" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="phone">Phone Number *</label>
+                  <input class="form-control" type="tel" id="phone" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="website">Company / Brand Website</label>
+                  <input class="form-control" type="url" id="website" placeholder="https://example.com" />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="budget">Budget Range *</label>
+                  <select class="form-control" id="budget" required></select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="campaignType">Campaign Type *</label>
+                  <select class="form-control" id="campaignType" required></select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="videoDuration">Video Duration Preference *</label>
+                  <select class="form-control" id="videoDuration" required></select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="timeline">Preferred Timeline *</label>
+                  <select class="form-control" id="timeline" required></select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="message">Special Requirements / Message</label>
+                  <textarea class="form-control" id="message" rows="4"></textarea>
+                </div>
+
+                <div class="flex items-center gap-16">
+                  <button type="submit" class="btn btn--primary">Submit Request</button>
+                  <div id="form-status" class="status hidden"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- SUBMISSIONS SECTION -->
+    <section id="submissions-section" class="hidden py-32">
+      <div class="container flex flex-col gap-16">
+        <h2 class="text-center">Submitted Promotion Requests</h2>
+        <div class="card">
+          <div class="card__body overflow-auto">
+            <table id="submissions-table" class="submissions-table" style="width:100%; border-collapse: collapse;">
+              <thead>
+                <tr>
+                  <th>Brand</th>
+                  <th>Contact</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Budget</th>
+                  <th>Campaign</th>
+                  <th>Duration</th>
+                  <th>Timeline</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
